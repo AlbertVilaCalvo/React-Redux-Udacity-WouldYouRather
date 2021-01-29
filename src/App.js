@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logIn, logOut } from './loggeduser/loggedUser'
+import LoginForm from './components/LoginForm'
 
 function App() {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ function App() {
         <div className="App-inner-container">
           <header className="header">
             <Link className="header-link" to="/">
-              Would you rather?
+              Would You Rather?
             </Link>
             {loggedUser !== null && (
               <span className="header-hello-username">Hello {loggedUser}!</span>
@@ -69,7 +70,7 @@ function App() {
             <Switch>
               {loggedUser === null && (
                 <Route path="/login">
-                  <p>Log In</p>
+                  <LoginForm />
                 </Route>
               )}
               {loggedUser === null && <Redirect to="/login" />}

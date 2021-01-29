@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { loggedUserReducer } from './loggeduser/loggedUser'
 import { Provider } from 'react-redux'
+import { usersReducer } from './users/users'
 
 const rootReducer = combineReducers({
   loggedUser: loggedUserReducer,
+  users: usersReducer,
 })
 
-const middleware = applyMiddleware(logger)
+const middleware = applyMiddleware(thunk, logger)
 
 const store = createStore(rootReducer, middleware)
 
