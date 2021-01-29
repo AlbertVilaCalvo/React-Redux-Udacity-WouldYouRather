@@ -1,7 +1,6 @@
 import './LoginForm.css'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUsers } from '../users/users'
 import { logIn } from '../loggeduser/loggedUser'
 
 const NO_USER_SELECTED = 'not-selected'
@@ -9,10 +8,6 @@ const NO_USER_SELECTED = 'not-selected'
 const LoginForm = () => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.users)
-
-  if (users === null) {
-    dispatch(getUsers())
-  }
 
   const [selectedUser, setSelectedUser] = useState(NO_USER_SELECTED)
 

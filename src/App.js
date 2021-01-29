@@ -10,11 +10,12 @@ import {
 } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import useLoggedUser from './loggeduser/useLoggedUser'
+import { getUsers } from './users/users'
+import { getQuestions } from './questions/questions'
 import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
 import Avatar from './components/Avatar'
 import HomePage from './components/HomePage'
-import { getQuestions } from './questions/questions'
 
 function App() {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ function App() {
   // "dispatch function identity is stable and won't change on re-renders"
   // so this will run only once
   useEffect(() => {
+    dispatch(getUsers())
     dispatch(getQuestions())
   }, [dispatch])
 
