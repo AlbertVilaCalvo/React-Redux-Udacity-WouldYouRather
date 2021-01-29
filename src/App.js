@@ -1,4 +1,5 @@
 import './App.css'
+import { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Link,
@@ -13,10 +14,18 @@ import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
 import Avatar from './components/Avatar'
 import HomePage from './components/HomePage'
+import { getQuestions } from './questions/questions'
 
 function App() {
   const dispatch = useDispatch()
   const loggedUser = useLoggedUser()
+
+  // From Redux docs - https://react-redux.js.org/api/hooks#usedispatch
+  // "dispatch function identity is stable and won't change on re-renders"
+  // so this will run only once
+  useEffect(() => {
+    dispatch(getQuestions())
+  }, [dispatch])
 
   return (
     <Router>

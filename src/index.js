@@ -7,12 +7,14 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { loggedUserReducer } from './loggeduser/loggedUser'
-import { Provider } from 'react-redux'
 import { usersReducer } from './users/users'
+import { questionsReducer } from './questions/questions'
+import { Provider } from 'react-redux'
 
 const rootReducer = combineReducers({
   loggedUser: loggedUserReducer,
   users: usersReducer,
+  questions: questionsReducer,
 })
 
 const middleware = applyMiddleware(thunk, logger)
