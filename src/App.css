@@ -37,17 +37,21 @@
   font-weight: bold;
 }
 
-nav ul {
+.App-nav {
+  margin-bottom: 40px;
+}
+
+.App-nav ul {
   display: flex;
   flex-direction: row;
 }
 
-nav li {
+.App-nav li {
   text-decoration: none;
   margin-right: 20px;
 }
 
-nav a {
+.App-nav a {
   color: var(--color-primary);
   text-decoration: none;
 }

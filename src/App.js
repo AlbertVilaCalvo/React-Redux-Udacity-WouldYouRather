@@ -46,7 +46,7 @@ function App() {
               </button>
             )}
           </header>
-          <nav>
+          <nav className="App-nav">
             <ul>
               <li>
                 <NavLink to="/" exact activeClassName="nav-link-active">
