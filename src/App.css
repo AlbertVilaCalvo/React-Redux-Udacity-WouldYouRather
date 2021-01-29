@@ -1,6 +1,6 @@
 .App-outer-container {
   text-align: center;
-  background-color: var(--color-background);
+  background-color: var(--color-dark);
   min-height: 100vh;
 }
 
@@ -27,16 +27,6 @@
   font-size: 16px;
 }
 
-.header-button {
-  background: var(--color-primary);
-  border: 0;
-  border-radius: 20px;
-  padding: 10px 25px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 .App-nav {
   margin-bottom: 40px;
 }
@@ -51,7 +41,7 @@
   margin-right: 20px;
 }
 
-.App-nav a {
+.nav-link {
   color: var(--color-primary);
   text-decoration: none;
 }

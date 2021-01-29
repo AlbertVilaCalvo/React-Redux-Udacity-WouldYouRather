@@ -58,5 +58,29 @@ body {
 
 :root {
   --color-primary: lightcoral;
-  --color-background: #282c34;
+  --color-dark: #282c34;
+}
+
+.button {
+  border: 0;
+  border-radius: 100px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.button-white {
+  background: white;
+  color: var(--color-dark);
+}
+
+.button-white:disabled {
+  background: darkgray;
+  color: var(--color-dark);
 }

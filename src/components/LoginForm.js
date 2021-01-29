@@ -1,3 +1,4 @@
+import './LoginForm.css'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../users/users'
@@ -29,11 +30,11 @@ const LoginForm = () => {
   return (
     <div>
       <h1>Welcome to Would You Rather?</h1>
-      <p>Please log in to continue</p>
+      <p className="login-form-subtitle">Please log in to continue</p>
       {users === null ? (
         <p>Loading...</p>
       ) : (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="login-form">
           <select value={selectedUser} onChange={onChange}>
             <option key={NO_USER_SELECTED} value={NO_USER_SELECTED}>
               Select a user
@@ -48,6 +49,7 @@ const LoginForm = () => {
             type="submit"
             value="Log In"
             disabled={selectedUser === NO_USER_SELECTED}
+            className="button button-white"
           />
         </form>
       )}

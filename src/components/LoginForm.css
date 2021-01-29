@@ -1,0 +1,25 @@
+.login-form-subtitle {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.login-form select {
+  font-size: 20px;
+  width: 220px;
+}
+
+.login-form input {
+  font-size: 20px;
+  width: 220px;
+}
+
+.login-form :first-child {
+  margin-bottom: 30px;
+}

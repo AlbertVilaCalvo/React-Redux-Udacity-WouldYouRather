@@ -29,7 +29,7 @@ function App() {
             )}
             {loggedUser === null ? (
               <button
-                className="header-button"
+                className="button button-primary"
                 onClick={() => {
                   dispatch(logIn('tylermcginnis'))
                 }}
@@ -38,7 +38,7 @@ function App() {
               </button>
             ) : (
               <button
-                className="header-button"
+                className="button button-primary"
                 onClick={() => {
                   dispatch(logOut())
                 }}
@@ -50,17 +50,30 @@ function App() {
           <nav className="App-nav">
             <ul>
               <li>
-                <NavLink to="/" exact activeClassName="nav-link-active">
+                <NavLink
+                  to="/"
+                  exact
+                  className="nav-link"
+                  activeClassName="nav-link-active"
+                >
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/add" activeClassName="nav-link-active">
+                <NavLink
+                  to="/add"
+                  className="nav-link"
+                  activeClassName="nav-link-active"
+                >
                   New Question
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/leaderboard" activeClassName="nav-link-active">
+                <NavLink
+                  to="/leaderboard"
+                  className="nav-link"
+                  activeClassName="nav-link-active"
+                >
                   Leader Board
                 </NavLink>
               </li>
