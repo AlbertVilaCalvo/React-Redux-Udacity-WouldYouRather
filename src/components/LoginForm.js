@@ -39,6 +39,7 @@ const LoginForm = () => {
             <option key={NO_USER_SELECTED} value={NO_USER_SELECTED}>
               Select a user
             </option>
+            {/* TODO use Avatar here to show image on the dropdown*/}
             {usersArray.map((user) => (
               <option key={user.id} value={user.id}>
                 {user.name}

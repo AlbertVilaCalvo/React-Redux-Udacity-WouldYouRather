@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux'
 import useLoggedUser from './loggeduser/useLoggedUser'
 import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
+import Avatar from './components/Avatar'
 
 function App() {
   const dispatch = useDispatch()
@@ -38,6 +39,11 @@ function App() {
                 <span className="header-hello-username">
                   Hello {loggedUser.name}!
                 </span>
+                <Avatar
+                  user={loggedUser}
+                  size="small"
+                  className="header-avatar"
+                />
                 <button
                   className="button button-primary"
                   onClick={() => {
