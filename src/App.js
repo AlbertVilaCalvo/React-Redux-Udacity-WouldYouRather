@@ -24,10 +24,21 @@ function App() {
             <Link className="header-link" to="/">
               Would You Rather?
             </Link>
-            {loggedUser !== null && (
-              <span className="header-hello-username">Hello {loggedUser}!</span>
-            )}
-            {loggedUser === null ? (
+            {loggedUser !== null ? (
+              <div>
+                <span className="header-hello-username">
+                  Hello {loggedUser}!
+                </span>
+                <button
+                  className="button button-primary"
+                  onClick={() => {
+                    dispatch(logOut())
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
+            ) : (
               <button
                 className="button button-primary"
                 onClick={() => {
@@ -35,15 +46,6 @@ function App() {
                 }}
               >
                 Log In
-              </button>
-            ) : (
-              <button
-                className="button button-primary"
-                onClick={() => {
-                  dispatch(logOut())
-                }}
-              >
-                Log Out
               </button>
             )}
           </header>
