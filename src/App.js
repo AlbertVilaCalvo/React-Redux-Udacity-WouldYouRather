@@ -7,14 +7,14 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import useLoggedUser from './loggeduser/useLoggedUser'
 import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
 
 function App() {
   const dispatch = useDispatch()
-  const loggedUser = useSelector((state) => state.loggedUser)
-  console.log('loggedUser', loggedUser)
+  const loggedUser = useLoggedUser()
 
   return (
     <Router>
@@ -27,7 +27,7 @@ function App() {
             {loggedUser !== null ? (
               <div>
                 <span className="header-hello-username">
-                  Hello {loggedUser}!
+                  Hello {loggedUser.name}!
                 </span>
                 <button
                   className="button button-primary"
