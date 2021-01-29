@@ -3,10 +3,24 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import logger from 'redux-logger'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { loggedUserReducer } from './loggeduser/loggedUser'
+import { Provider } from 'react-redux'
+
+const rootReducer = combineReducers({
+  loggedUser: loggedUserReducer,
+})
+
+const middleware = applyMiddleware(logger)
+
+const store = createStore(rootReducer, middleware)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

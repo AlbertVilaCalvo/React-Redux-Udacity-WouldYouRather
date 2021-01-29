@@ -12,6 +12,8 @@
 .header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 0;
   font-size: 34px;
 }
@@ -19,6 +21,20 @@
 .header-link {
   color: var(--color-primary);
   text-decoration: none;
+}
+
+.header-hello-username {
+  font-size: 16px;
+}
+
+.header-button {
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 nav ul {
