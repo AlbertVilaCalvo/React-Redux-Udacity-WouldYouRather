@@ -1,10 +1,10 @@
-.App {
+.App-outer-container {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
 }
 
-.App-container {
+.App-inner-container {
   max-width: 700px;
   margin: 0 auto;
 }
@@ -33,4 +33,10 @@ nav li {
 
 nav a {
   color: lightcoral;
+  text-decoration: none;
+}
+
+.nav-link-active {
+  text-decoration: underline;
+  font-weight: bold;
 }

@@ -10,8 +10,8 @@ import {
 function App() {
   return (
     <Router>
-      <div className="App">
-        <div className="App-container">
+      <div className="App-outer-container">
+        <div className="App-inner-container">
           <header className="header">
             <Link className="header-link" to="/">
               Would you rather?
@@ -20,13 +20,19 @@ function App() {
           <nav>
             <ul>
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" exact activeClassName="nav-link-active">
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/add">New Question</NavLink>
+                <NavLink to="/add" activeClassName="nav-link-active">
+                  New Question
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/leaderboard">Leader Board</NavLink>
+                <NavLink to="/leaderboard" activeClassName="nav-link-active">
+                  Leader Board
+                </NavLink>
               </li>
             </ul>
           </nav>
