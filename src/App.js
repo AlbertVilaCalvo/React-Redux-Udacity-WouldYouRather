@@ -24,7 +24,16 @@ function App() {
             <Link className="header-link" to="/">
               Would You Rather?
             </Link>
-            {loggedUser !== null ? (
+            {loggedUser === null ? (
+              <button
+                className="button button-primary"
+                onClick={() => {
+                  dispatch(logIn('tylermcginnis'))
+                }}
+              >
+                Log In
+              </button>
+            ) : (
               <div className="header-right-container">
                 <span className="header-hello-username">
                   Hello {loggedUser.name}!
@@ -38,15 +47,6 @@ function App() {
                   Log Out
                 </button>
               </div>
-            ) : (
-              <button
-                className="button button-primary"
-                onClick={() => {
-                  dispatch(logIn('tylermcginnis'))
-                }}
-              >
-                Log In
-              </button>
             )}
           </header>
           <nav className="App-nav">
