@@ -1,6 +1,6 @@
 .App-outer-container {
   text-align: center;
-  background-color: #282c34;
+  background-color: var(--color-background);
   min-height: 100vh;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .header-link {
-  color: lightcoral;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -32,7 +32,7 @@ nav li {
 }
 
 nav a {
-  color: lightcoral;
+  color: var(--color-primary);
   text-decoration: none;
 }
 

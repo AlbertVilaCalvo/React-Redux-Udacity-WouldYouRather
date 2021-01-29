@@ -55,3 +55,8 @@ body {
 
   color: white;
 }
+
+:root {
+  --color-primary: lightcoral;
+  --color-background: #282c34;
+}
