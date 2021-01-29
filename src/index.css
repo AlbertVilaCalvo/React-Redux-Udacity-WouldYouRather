@@ -75,6 +75,11 @@ body {
   color: var(--color-dark);
 }
 
+.button-primary-disabled {
+  background: #8c565a;
+  color: var(--color-dark);
+}
+
 .button-white {
   background: white;
   color: var(--color-dark);

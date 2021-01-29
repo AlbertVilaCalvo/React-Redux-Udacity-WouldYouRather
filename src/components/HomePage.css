@@ -1,0 +1,9 @@
+.home-nav-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home-nav-ul li {
+  margin: 0 4px;
+}

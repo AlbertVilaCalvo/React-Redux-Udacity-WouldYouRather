@@ -12,6 +12,7 @@ import useLoggedUser from './loggeduser/useLoggedUser'
 import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
 import Avatar from './components/Avatar'
+import HomePage from './components/HomePage'
 
 function App() {
   const dispatch = useDispatch()
@@ -102,7 +103,7 @@ function App() {
                 <p>Leader Board</p>
               </Route>
               <Route path="/" exact>
-                <p>Home</p>
+                <HomePage />
               </Route>
               <Redirect to="/" />
             </Switch>
