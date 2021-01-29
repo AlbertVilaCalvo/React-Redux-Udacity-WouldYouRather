@@ -1,13 +1,14 @@
 import './LoginForm.css'
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { logIn } from '../loggeduser/loggedUser'
+import { useUsers } from '../users/useUsers'
 
 const NO_USER_SELECTED = 'not-selected'
 
 const LoginForm = () => {
   const dispatch = useDispatch()
-  const users = useSelector((state) => state.users)
+  const users = useUsers()
 
   const [selectedUser, setSelectedUser] = useState(NO_USER_SELECTED)
 
@@ -19,8 +20,6 @@ const LoginForm = () => {
     event.preventDefault()
     dispatch(logIn(selectedUser))
   }
-
-  const usersArray = users ? Object.values(users) : null
 
   return (
     <div>
@@ -34,8 +33,8 @@ const LoginForm = () => {
             <option key={NO_USER_SELECTED} value={NO_USER_SELECTED}>
               Select a user
             </option>
-            {/* TODO use Avatar here to show image on the dropdown*/}
-            {usersArray.map((user) => (
+            {/* TODO use Avatar here to show image on the dropdown */}
+            {users.map((user) => (
               <option key={user.id} value={user.id}>
                 {user.name}
               </option>
