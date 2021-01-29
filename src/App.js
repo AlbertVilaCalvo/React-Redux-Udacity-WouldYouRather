@@ -25,7 +25,7 @@ function App() {
               Would You Rather?
             </Link>
             {loggedUser !== null ? (
-              <div>
+              <div className="header-right-container">
                 <span className="header-hello-username">
                   Hello {loggedUser.name}!
                 </span>
