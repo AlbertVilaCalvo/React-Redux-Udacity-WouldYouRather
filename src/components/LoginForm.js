@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { logIn } from '../loggeduser/loggedUser'
 import { useUsers } from '../users/useUsers'
+import Loading from './Loading'
 
 const NO_USER_SELECTED = 'not-selected'
 
@@ -26,7 +27,7 @@ const LoginForm = () => {
       <h1>Welcome to Would You Rather?</h1>
       <p className="login-form-subtitle">Please log in to continue</p>
       {users === null ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <form onSubmit={onSubmit} className="login-form">
           <select value={selectedUser} onChange={onChange}>

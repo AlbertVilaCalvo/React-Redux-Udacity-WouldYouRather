@@ -1,6 +1,7 @@
 import './HomePage.css'
 import React, { useState } from 'react'
 import QuestionList from './QuestionList'
+import Loading from './Loading'
 import useLoggedUser from '../loggeduser/useLoggedUser'
 import useQuestions from '../questions/useQuestions'
 
@@ -47,7 +48,7 @@ const HomePage = () => {
         </ul>
       </nav>
       {answeredQuestions === null || unansweredQuestions === null ? (
-        <p>Loading...</p>
+        <Loading />
       ) : selectedTabIndex === 0 ? (
         <QuestionList questions={answeredQuestions} />
       ) : (
