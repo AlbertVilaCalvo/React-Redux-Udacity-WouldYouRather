@@ -8,14 +8,14 @@ import QuestionDetailUnanswered from './QuestionDetailUnanswered'
 const QuestionDetail = () => {
   const { questionId } = useParams()
 
-  const user = useLoggedUser()
+  const loggedUser = useLoggedUser()
   const [question, author] = useQuestionAuthor(questionId)
 
-  if (user === null || question === null || author === null) {
+  if (loggedUser === null || question === null || author === null) {
     return <Loading />
   }
 
-  const isAnswered = Object.keys(user.answers).includes(questionId)
+  const isAnswered = Object.keys(loggedUser.answers).includes(questionId)
 
   if (isAnswered) {
     return <QuestionDetailAnswered />

@@ -11,12 +11,12 @@ const HomePage = () => {
   const tabClass = (tabIndex) =>
     selectedTabIndex === tabIndex ? 'button-primary' : 'button-primary-disabled'
 
-  const user = useLoggedUser()
+  const loggedUser = useLoggedUser()
   const questions = useQuestions()
   let answeredQuestions = null
   let unansweredQuestions = null
-  if (user !== null && questions !== null) {
-    const answeredQuestionsIds = Object.keys(user.answers)
+  if (loggedUser !== null && questions !== null) {
+    const answeredQuestionsIds = Object.keys(loggedUser.answers)
     answeredQuestions = questions.filter((q) =>
       answeredQuestionsIds.includes(q.id)
     )
