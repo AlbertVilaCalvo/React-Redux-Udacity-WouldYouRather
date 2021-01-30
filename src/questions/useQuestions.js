@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
 
+// TODO remove if not used
+
 /**
  * @returns {Object[]|null} an array with all questions, or null if they
  * haven't been fetched yet.

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import QuestionList from './QuestionList'
 import Loading from './Loading'
 import useLoggedUser from '../loggeduser/useLoggedUser'
-import useQuestions from '../questions/useQuestions'
+import useQuestionsSorted from '../questions/useQuestionsSorted'
 
 const HomePage = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0) // 0 or 1
@@ -12,7 +12,7 @@ const HomePage = () => {
     selectedTabIndex === tabIndex ? 'button-primary' : 'button-primary-disabled'
 
   const loggedUser = useLoggedUser()
-  const questions = useQuestions()
+  const questions = useQuestionsSorted()
   let answeredQuestions = null
   let notAnsweredQuestions = null
   if (loggedUser !== null && questions !== null) {
