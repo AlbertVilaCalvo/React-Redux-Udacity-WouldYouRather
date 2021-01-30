@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 /**
- * Returns an array with the users, or null if they haven't been fetched yet.
+ * Returns an array with all users, or null if they haven't been fetched yet.
  * @returns {unknown[]|null}
  */
 export function useUsers() {

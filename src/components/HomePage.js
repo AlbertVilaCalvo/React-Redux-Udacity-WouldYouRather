@@ -2,7 +2,7 @@ import './HomePage.css'
 import React, { useState } from 'react'
 import QuestionList from './QuestionList'
 import useLoggedUser from '../loggeduser/useLoggedUser'
-import { useSelector } from 'react-redux'
+import useQuestions from '../questions/useQuestions'
 
 const HomePage = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0) // 0 or 1
@@ -11,16 +11,15 @@ const HomePage = () => {
     selectedTabIndex === tabIndex ? 'button-primary' : 'button-primary-disabled'
 
   const user = useLoggedUser()
-  const questions = useSelector((state) => state.questions)
+  const questions = useQuestions()
   let answeredQuestions = null
   let unansweredQuestions = null
   if (user !== null && questions !== null) {
     const answeredQuestionsIds = Object.keys(user.answers)
-    const questionsArray = Object.values(questions)
-    answeredQuestions = questionsArray.filter((q) =>
+    answeredQuestions = questions.filter((q) =>
       answeredQuestionsIds.includes(q.id)
     )
-    unansweredQuestions = questionsArray.filter(
+    unansweredQuestions = questions.filter(
       (q) => !answeredQuestionsIds.includes(q.id)
     )
   }
