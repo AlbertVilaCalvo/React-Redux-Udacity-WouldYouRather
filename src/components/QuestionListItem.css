@@ -18,25 +18,29 @@
 
 .questionlistitem-author-container :first-child {
   margin-bottom: 10px;
-}
-
-.questionlistitem-options-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 30px;
-  align-items: start;
-}
-
-.questionlistitem-options-container p {
-  text-align: start;
-}
-
-.questionlistitem-options-container :first-child {
   color: var(--color-primary);
 }
 
-.questionlistitem-options-container p:nth-child(2) {
-  margin: 15px 0;
+.questionlistitem-wouldyourather-options-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.questionlistitem-wouldyourather-options-container p {
+  text-align: start;
+}
+
+.questionlistitem-wouldyourather-options-container > :first-child {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.questionlistitem-options-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .questionlistitem-question {

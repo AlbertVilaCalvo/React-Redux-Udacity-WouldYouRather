@@ -12,10 +12,12 @@ const QuestionListItem = ({ question, author }) => {
         </p>
         <Avatar user={author} />
       </div>
-      <div className="questionlistitem-options-container">
+      <div className="questionlistitem-wouldyourather-options-container">
         <p>Would you rather...</p>
-        <p className="questionlistitem-question">{question.optionOne.text}</p>
-        <p className="questionlistitem-question">{question.optionTwo.text}</p>
+        <div className="questionlistitem-options-container">
+          <p className="questionlistitem-question">{question.optionOne.text}</p>
+          <p className="questionlistitem-question">{question.optionTwo.text}</p>
+        </div>
       </div>
     </div>
   )
