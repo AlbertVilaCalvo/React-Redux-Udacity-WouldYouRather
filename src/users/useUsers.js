@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
 
 /**
- * Returns an array with all users, or null if they haven't been fetched yet.
- * @returns {unknown[]|null}
+ * @returns {Object[]|null} an array with all users, or null if they haven't
+ * been fetched yet.
  */
 export function useUsers() {
   // Convert { username1: {user1}, username2: {user2} } to [{user1}, {user2}]
