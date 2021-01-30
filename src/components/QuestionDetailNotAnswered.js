@@ -6,7 +6,7 @@ import { ANSWER_1, ANSWER_2 } from '../questions/questions'
 
 const NO_ANSWER = ''
 
-const QuestionDetailUnanswered = ({ question, author, loggedUser }) => {
+const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
   const dispatch = useDispatch()
 
   const [selectedAnswer, setSelectedAnswer] = useState(NO_ANSWER)
@@ -63,10 +63,10 @@ const QuestionDetailUnanswered = ({ question, author, loggedUser }) => {
   )
 }
 
-QuestionDetailUnanswered.propTypes = {
+QuestionDetailNotAnswered.propTypes = {
   question: PropTypes.object.isRequired,
   author: PropTypes.object.isRequired,
   loggedUser: PropTypes.object.isRequired,
 }
 
-export default QuestionDetailUnanswered
+export default QuestionDetailNotAnswered

@@ -3,7 +3,7 @@ import Loading from './Loading'
 import useQuestionAuthor from '../questions/useQuestionAuthor'
 import useLoggedUser from '../loggeduser/useLoggedUser'
 import QuestionDetailAnswered from './QuestionDetailAnswered'
-import QuestionDetailUnanswered from './QuestionDetailUnanswered'
+import QuestionDetailNotAnswered from './QuestionDetailNotAnswered'
 
 const QuestionDetail = () => {
   const { questionId } = useParams()
@@ -21,7 +21,7 @@ const QuestionDetail = () => {
     return <QuestionDetailAnswered />
   } else {
     return (
-      <QuestionDetailUnanswered
+      <QuestionDetailNotAnswered
         question={question}
         author={author}
         loggedUser={loggedUser}
