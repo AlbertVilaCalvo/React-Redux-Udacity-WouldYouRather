@@ -14,13 +14,13 @@ const HomePage = () => {
   const loggedUser = useLoggedUser()
   const questions = useQuestions()
   let answeredQuestions = null
-  let unansweredQuestions = null
+  let notAnsweredQuestions = null
   if (loggedUser !== null && questions !== null) {
     const answeredQuestionsIds = Object.keys(loggedUser.answers)
     answeredQuestions = questions.filter((q) =>
       answeredQuestionsIds.includes(q.id)
     )
-    unansweredQuestions = questions.filter(
+    notAnsweredQuestions = questions.filter(
       (q) => !answeredQuestionsIds.includes(q.id)
     )
   }
@@ -47,10 +47,10 @@ const HomePage = () => {
           </li>
         </ul>
       </nav>
-      {answeredQuestions === null || unansweredQuestions === null ? (
+      {answeredQuestions === null || notAnsweredQuestions === null ? (
         <Loading />
       ) : selectedTabIndex === 0 ? (
-        <QuestionList questions={unansweredQuestions} />
+        <QuestionList questions={notAnsweredQuestions} />
       ) : (
         <QuestionList questions={answeredQuestions} />
       )}
