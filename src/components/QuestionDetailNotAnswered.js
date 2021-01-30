@@ -2,7 +2,7 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import Avatar from './Avatar'
-import { ANSWER_1, ANSWER_2 } from '../questions/questions'
+import { ANSWER_1, ANSWER_2, saveQuestionAnswer } from '../questions/questions'
 
 const NO_ANSWER = ''
 
@@ -13,6 +13,13 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
 
   const onSubmit = (event) => {
     event.preventDefault()
+    dispatch(
+      saveQuestionAnswer({
+        userId: loggedUser.id,
+        questionId: question.id,
+        answer: selectedAnswer,
+      })
+    )
   }
 
   return (
