@@ -2,10 +2,14 @@ import './QuestionListItem.css'
 import React from 'react'
 import PropTypes from 'prop-types'
 import Avatar from './Avatar'
+import { Link } from 'react-router-dom'
 
 const QuestionListItem = ({ question, author }) => {
   return (
-    <div className="questionlistitem-main-container">
+    <Link
+      to={`/question/${question.id}`}
+      className="questionlistitem-main-container"
+    >
       <div className="questionlistitem-author-container">
         <p>
           <strong>{author.name}</strong> asks
@@ -19,7 +23,7 @@ const QuestionListItem = ({ question, author }) => {
           <p className="questionlistitem-question">{question.optionTwo.text}</p>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

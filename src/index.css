@@ -44,6 +44,11 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 /* Global styles */
 
 body {

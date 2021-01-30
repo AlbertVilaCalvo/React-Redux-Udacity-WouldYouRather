@@ -16,6 +16,7 @@ import { logIn, logOut } from './loggeduser/loggedUser'
 import LoginForm from './components/LoginForm'
 import Avatar from './components/Avatar'
 import HomePage from './components/HomePage'
+import QuestionDetail from './components/QuestionDetail'
 
 function App() {
   const dispatch = useDispatch()
@@ -112,6 +113,9 @@ function App() {
               </Route>
               <Route path="/leaderboard">
                 <p>Leader Board</p>
+              </Route>
+              <Route path="/question/:questionId">
+                <QuestionDetail />
               </Route>
               <Route path="/" exact>
                 <HomePage />
