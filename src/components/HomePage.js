@@ -1,5 +1,5 @@
 import './HomePage.css'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import QuestionList from './QuestionList'
 import Loading from './Loading'
 import useLoggedUser from '../loggeduser/useLoggedUser'
