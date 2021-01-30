@@ -50,9 +50,9 @@ const HomePage = () => {
       {answeredQuestions === null || unansweredQuestions === null ? (
         <Loading />
       ) : selectedTabIndex === 0 ? (
-        <QuestionList questions={answeredQuestions} />
-      ) : (
         <QuestionList questions={unansweredQuestions} />
+      ) : (
+        <QuestionList questions={answeredQuestions} />
       )}
     </div>
   )
