@@ -20,7 +20,13 @@ const QuestionDetail = () => {
   if (isAnswered) {
     return <QuestionDetailAnswered />
   } else {
-    return <QuestionDetailUnanswered question={question} author={author} />
+    return (
+      <QuestionDetailUnanswered
+        question={question}
+        author={author}
+        loggedUser={loggedUser}
+      />
+    )
   }
 }
 
