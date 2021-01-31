@@ -1,12 +1,26 @@
 import './NewQuestionForm.css'
+import { useDispatch } from 'react-redux'
+import useLoggedUser from '../loggeduser/useLoggedUser'
+import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
+import { saveNewQuestion } from '../questions/questions'
 
 const NewQuestionForm = () => {
+  const dispatch = useDispatch()
+  const loggedUser = useLoggedUser()
+  const history = useHistory()
+
   const [option1, setOption1] = useState('')
   const [option2, setOption2] = useState('')
 
   const onSubmit = (e) => {
     e.preventDefault()
+    dispatch(saveNewQuestion(option1, option2, loggedUser.id))
+    history.push('/')
+  }
+
+  if (loggedUser === null) {
+    return null
   }
 
   return (

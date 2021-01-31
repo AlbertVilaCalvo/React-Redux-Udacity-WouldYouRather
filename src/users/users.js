@@ -2,6 +2,7 @@ import { _getUsers } from '../utils/_DATA'
 
 const SET_USERS = 'SET_USERS'
 const SAVE_QUESTION_ANSWER_TO_USER = 'SAVE_QUESTION_ANSWER_TO_USER'
+const SAVE_NEW_QUESTION_TO_USER = 'SAVE_NEW_QUESTION_TO_USER'
 
 const setUsers = (users) => {
   return {
@@ -16,6 +17,13 @@ export const saveQuestionAnswerToLocalUser = (userId, questionId, answer) => {
     userId,
     questionId,
     answer,
+  }
+}
+
+export const saveNewQuestionToLocalUser = (question) => {
+  return {
+    type: SAVE_NEW_QUESTION_TO_USER,
+    question,
   }
 }
 
@@ -39,6 +47,15 @@ export const usersReducer = (state = null, action) => {
             ...state[userId].answers,
             [action.questionId]: action.answer,
           },
+        },
+      }
+    case SAVE_NEW_QUESTION_TO_USER:
+      const authorId = action.question.author
+      return {
+        ...state,
+        [authorId]: {
+          ...state[authorId],
+          questions: state[authorId].questions.concat(action.question.id),
         },
       }
     default:
