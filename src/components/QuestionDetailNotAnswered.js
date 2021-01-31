@@ -23,7 +23,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
   }
 
   return (
-    <div className="question-main-container">
+    <div className="container-with-border">
       <div className="question-author-container">
         <p>
           <strong>{author.name}</strong> asks

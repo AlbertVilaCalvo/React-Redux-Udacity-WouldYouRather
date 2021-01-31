@@ -1,0 +1,34 @@
+.leaderboard-user-name {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.leaderboard-info-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.leaderboard-info-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.leaderboard-info-row > span {
+  flex-grow: 1;
+  flex-basis: 0;
+  align-self: center;
+}
+
+.leaderboard-info-text {
+  font-size: 18px;
+}
+
+.leaderboard-info-number {
+  font-weight: bold;
+  font-size: 32px;
+}

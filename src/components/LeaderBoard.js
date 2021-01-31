@@ -1,3 +1,4 @@
+import './LeaderBoard.css'
 import React from 'react'
 import { useUsers } from '../users/useUsers'
 import Loading from './Loading'
@@ -29,12 +30,29 @@ const LeaderBoard = () => {
       <h1>Leader Board</h1>
       <ul>
         {usersWithScore.map((user) => (
-          <li>
-            <Avatar user={user} />
-            <p>{user.name}</p>
-            <p>Score: {user.score}</p>
-            <p>Answered questions: {user.answeredQuestionsCount}</p>
-            <p>Created questions: {user.createdQuestionsCount}</p>
+          <li key={user.id} className="container-with-border">
+            <div>
+              <p className="leaderboard-user-name">{user.name}</p>
+              <Avatar user={user} />
+            </div>
+            <div className="leaderboard-info-container">
+              <div className="leaderboard-info-row">
+                <span className="leaderboard-info-text">Score</span>
+                <span className="leaderboard-info-text">
+                  Answered questions
+                </span>
+                <span className="leaderboard-info-text">Created questions</span>
+              </div>
+              <div className="leaderboard-info-row">
+                <span className="leaderboard-info-number">{user.score}</span>
+                <span className="leaderboard-info-number">
+                  {user.answeredQuestionsCount}
+                </span>
+                <span className="leaderboard-info-number">
+                  {user.createdQuestionsCount}
+                </span>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

@@ -9,7 +9,7 @@ const Avatar = ({ user, size = 'large', ...props }) => {
   return (
     <img
       src={user.avatarURL}
-      style={{ ...style, width: px }}
+      style={{ ...style, width: px, height: px }}
       alt={user.name}
       {...props}
     />

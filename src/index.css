@@ -94,3 +94,13 @@ body {
   background: darkgray;
   color: var(--color-dark);
 }
+
+.container-with-border {
+  margin: 25px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+}

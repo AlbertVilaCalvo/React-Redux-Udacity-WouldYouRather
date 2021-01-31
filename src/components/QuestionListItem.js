@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const QuestionListItem = ({ question, author }) => {
   return (
-    <Link to={`/question/${question.id}`} className="question-main-container">
+    <Link to={`/question/${question.id}`} className="container-with-border">
       <div className="question-author-container">
         <p>
           <strong>{author.name}</strong> asks
