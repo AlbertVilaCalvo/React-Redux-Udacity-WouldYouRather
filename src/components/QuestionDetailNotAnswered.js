@@ -23,20 +23,17 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
   }
 
   return (
-    <div className="questionlistitem-main-container">
-      <div className="questionlistitem-author-container">
+    <div className="question-main-container">
+      <div className="question-author-container">
         <p>
           <strong>{author.name}</strong> asks
         </p>
         <Avatar user={author} />
       </div>
-      <div className="questionlistitem-wouldyourather-options-container">
+      <div className="question-wouldyourather-options-container">
         <p>Would you rather...</p>
-        <form
-          onSubmit={onSubmit}
-          className="questionlistitem-options-container"
-        >
-          <label className="questionlistitem-question">
+        <form onSubmit={onSubmit} className="question-options-container">
+          <label className="question-question">
             <input
               type="radio"
               name="question"
@@ -47,7 +44,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
             />
             {question.optionOne.text}
           </label>
-          <label className="questionlistitem-question">
+          <label className="question-question">
             <input
               type="radio"
               name="question"

@@ -1,4 +1,4 @@
-.questionlistitem-main-container {
+.question-main-container {
   margin: 25px auto;
   max-width: 500px;
   display: flex;
@@ -8,7 +8,7 @@
   border-radius: 5px;
 }
 
-.questionlistitem-author-container {
+.question-author-container {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -16,47 +16,47 @@
   width: 170px;
 }
 
-.questionlistitem-author-container :first-child {
+.question-author-container :first-child {
   margin-bottom: 10px;
   color: var(--color-primary);
 }
 
-.questionlistitem-wouldyourather-options-container {
+.question-wouldyourather-options-container {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
 }
 
-.questionlistitem-wouldyourather-options-container p {
+.question-wouldyourather-options-container p {
   text-align: start;
 }
 
-.questionlistitem-wouldyourather-options-container > :first-child {
+.question-wouldyourather-options-container > :first-child {
   color: var(--color-primary);
   margin-bottom: 10px;
 }
 
-.questionlistitem-options-container {
+.question-options-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.questionlistitem-question {
+.question-question {
   font-size: 22px;
 }
 
 /* form */
-.questionlistitem-wouldyourather-options-container label {
+.question-wouldyourather-options-container label {
   text-align: start;
 }
 
-.questionlistitem-options-container label:nth-child(2) {
+.question-options-container label:nth-child(2) {
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.questionlistitem-options-container input[type='radio'] {
+.question-options-container input[type='radio'] {
   margin-right: 12px;
 }
