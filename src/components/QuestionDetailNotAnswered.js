@@ -23,7 +23,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
   }
 
   return (
-    <div>
+    <div className="questionlistitem-main-container">
       <div className="questionlistitem-author-container">
         <p>
           <strong>{author.name}</strong> asks
@@ -36,7 +36,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
           onSubmit={onSubmit}
           className="questionlistitem-options-container"
         >
-          <label>
+          <label className="questionlistitem-question">
             <input
               type="radio"
               name="question"
@@ -44,18 +44,16 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
               checked={selectedAnswer === ANSWER_1}
               onChange={() => setSelectedAnswer(ANSWER_1)}
               required
-              className="questionlistitem-question"
             />
             {question.optionOne.text}
           </label>
-          <label>
+          <label className="questionlistitem-question">
             <input
               type="radio"
               name="question"
               value={ANSWER_2}
               checked={selectedAnswer === ANSWER_2}
               onChange={() => setSelectedAnswer(ANSWER_2)}
-              className="questionlistitem-question"
             />
             {question.optionTwo.text}
           </label>
@@ -63,6 +61,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
             type="submit"
             value="Submit"
             disabled={selectedAnswer === NO_ANSWER}
+            className="button button-white"
           />
         </form>
       </div>

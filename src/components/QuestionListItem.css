@@ -46,3 +46,17 @@
 .questionlistitem-question {
   font-size: 22px;
 }
+
+/* form */
+.questionlistitem-wouldyourather-options-container label {
+  text-align: start;
+}
+
+.questionlistitem-options-container label:nth-child(2) {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.questionlistitem-options-container input[type='radio'] {
+  margin-right: 12px;
+}
