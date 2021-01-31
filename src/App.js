@@ -18,6 +18,7 @@ import Avatar from './components/Avatar'
 import HomePage from './components/HomePage'
 import QuestionDetail from './components/QuestionDetail'
 import NewQuestionForm from './components/NewQuestionForm'
+import LeaderBoard from './components/LeaderBoard'
 
 function App() {
   const dispatch = useDispatch()
@@ -113,7 +114,7 @@ function App() {
                 <NewQuestionForm />
               </Route>
               <Route path="/leaderboard">
-                <p>Leader Board</p>
+                <LeaderBoard />
               </Route>
               <Route path="/question/:questionId">
                 <QuestionDetail />
