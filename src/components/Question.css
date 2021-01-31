@@ -43,11 +43,12 @@
   justify-content: space-evenly;
 }
 
-.question-question {
+.question-option {
   font-size: 22px;
 }
 
-/* form */
+/* form - QuestionDetailNotAnswered */
+
 .question-wouldyourather-options-container label {
   text-align: start;
 }
@@ -59,4 +60,31 @@
 
 .question-options-container input[type='radio'] {
   margin-right: 12px;
+}
+
+/* results - QuestionDetailAnswered */
+
+.question-option-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.question-option-container:first-child {
+  margin-bottom: 10px;
+}
+
+.question-voted {
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+}
+
+.question-my-answer {
+  color: var(--color-primary);
+  margin-bottom: 3px;
+}
+
+.question-votes {
+  color: var(--color-primary);
+  margin-top: 5px;
 }

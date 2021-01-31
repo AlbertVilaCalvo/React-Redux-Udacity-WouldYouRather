@@ -15,8 +15,8 @@ const QuestionListItem = ({ question, author }) => {
       <div className="question-wouldyourather-options-container">
         <p>Would you rather...</p>
         <div className="question-options-container">
-          <p className="question-question">{question.optionOne.text}</p>
-          <p className="question-question">{question.optionTwo.text}</p>
+          <p className="question-option">{question.optionOne.text}</p>
+          <p className="question-option">{question.optionTwo.text}</p>
         </div>
       </div>
     </Link>

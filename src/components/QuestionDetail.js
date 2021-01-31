@@ -18,7 +18,13 @@ const QuestionDetail = () => {
   const isAnswered = Object.keys(loggedUser.answers).includes(questionId)
 
   if (isAnswered) {
-    return <QuestionDetailAnswered />
+    return (
+      <QuestionDetailAnswered
+        question={question}
+        author={author}
+        loggedUser={loggedUser}
+      />
+    )
   } else {
     return (
       <QuestionDetailNotAnswered

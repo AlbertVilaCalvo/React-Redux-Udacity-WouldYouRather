@@ -33,7 +33,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
       <div className="question-wouldyourather-options-container">
         <p>Would you rather...</p>
         <form onSubmit={onSubmit} className="question-options-container">
-          <label className="question-question">
+          <label className="question-option">
             <input
               type="radio"
               name="question"
@@ -44,7 +44,7 @@ const QuestionDetailNotAnswered = ({ question, author, loggedUser }) => {
             />
             {question.optionOne.text}
           </label>
-          <label className="question-question">
+          <label className="question-option">
             <input
               type="radio"
               name="question"
