@@ -79,7 +79,7 @@ export const questionsReducer = (state = null, action) => {
       return action.questions
     case SAVE_QUESTION_ANSWER_TO_QUESTION:
       const questionId = action.questionId
-      const answer = action.answer
+      const answer = action.answer // 'optionOne' or 'optionTwo'
       return {
         ...state,
         [questionId]: {
@@ -90,6 +90,10 @@ export const questionsReducer = (state = null, action) => {
           },
         },
       }
+    // With immer we would do:
+    // return produce(state, (draftState) => {
+    //   draftState[questionId][answer].votes.push(action.userId)
+    // })
     case SAVE_NEW_QUESTION_TO_QUESTIONS:
       return { ...state, [action.question.id]: action.question }
     default:

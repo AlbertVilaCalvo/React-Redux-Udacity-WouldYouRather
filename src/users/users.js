@@ -49,6 +49,10 @@ export const usersReducer = (state = null, action) => {
           },
         },
       }
+    // With immer we would do:
+    // return produce(state, (draftState) => {
+    //   draftState[userId].answers[action.questionId] = action.answer
+    // })
     case SAVE_NEW_QUESTION_TO_USER:
       const authorId = action.question.author
       return {
@@ -58,6 +62,10 @@ export const usersReducer = (state = null, action) => {
           questions: state[authorId].questions.concat(action.question.id),
         },
       }
+    // With immer we would do:
+    // return produce(state, (draftState) => {
+    //   draftState[authorId].questions.push(action.question.id)
+    // })
     default:
       return state
   }
