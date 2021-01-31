@@ -1,0 +1,19 @@
+.newquestion-container input {
+  font-size: 18px;
+}
+
+.newquestion-container > p {
+  margin: 20px 0;
+  font-size: 22px;
+}
+
+.newquestion-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 20px auto;
+}
+
+.newquestion-form :nth-child(2) {
+  margin: 20px 0;
+}

@@ -17,6 +17,7 @@ import LoginForm from './components/LoginForm'
 import Avatar from './components/Avatar'
 import HomePage from './components/HomePage'
 import QuestionDetail from './components/QuestionDetail'
+import NewQuestionForm from './components/NewQuestionForm'
 
 function App() {
   const dispatch = useDispatch()
@@ -109,7 +110,7 @@ function App() {
               )}
               {loggedUser === null && <Redirect to="/login" />}
               <Route path="/add">
-                <p>Add</p>
+                <NewQuestionForm />
               </Route>
               <Route path="/leaderboard">
                 <p>Leader Board</p>
