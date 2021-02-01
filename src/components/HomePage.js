@@ -7,23 +7,28 @@ import useQuestionsSorted from '../questions/useQuestionsSorted'
 
 const HomePage = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0) // 0 or 1
+  const loggedUser = useLoggedUser()
+  const questions = useQuestionsSorted()
+
+  if (loggedUser === null) {
+    // will be redirected to /login
+    return null
+  }
+
+  if (questions === null) {
+    return <Loading />
+  }
 
   const tabClass = (tabIndex) =>
     selectedTabIndex === tabIndex ? 'button-primary' : 'button-primary-disabled'
 
-  const loggedUser = useLoggedUser()
-  const questions = useQuestionsSorted()
-  let answeredQuestions = null
-  let notAnsweredQuestions = null
-  if (loggedUser !== null && questions !== null) {
-    const answeredQuestionsIds = Object.keys(loggedUser.answers)
-    answeredQuestions = questions.filter((q) =>
-      answeredQuestionsIds.includes(q.id)
-    )
-    notAnsweredQuestions = questions.filter(
-      (q) => !answeredQuestionsIds.includes(q.id)
-    )
-  }
+  const answeredQuestionsIds = Object.keys(loggedUser.answers)
+  const answeredQuestions = questions.filter((q) =>
+    answeredQuestionsIds.includes(q.id)
+  )
+  const notAnsweredQuestions = questions.filter(
+    (q) => !answeredQuestionsIds.includes(q.id)
+  )
 
   return (
     <div>
@@ -47,9 +52,7 @@ const HomePage = () => {
           </li>
         </ul>
       </nav>
-      {answeredQuestions === null || notAnsweredQuestions === null ? (
-        <Loading />
-      ) : selectedTabIndex === 0 ? (
+      {selectedTabIndex === 0 ? (
         <QuestionList questions={notAnsweredQuestions} />
       ) : (
         <QuestionList questions={answeredQuestions} />
