@@ -34,88 +34,86 @@ function App() {
 
   return (
     <Router>
-      <div className="App-outer-container">
-        <div className="App-inner-container">
-          <header className="header">
-            <Link className="header-link" to="/">
-              Would You Rather?
-            </Link>
-            {loggedUser === null ? (
+      <div className="App-inner-container">
+        <header className="header">
+          <Link className="header-link" to="/">
+            Would You Rather?
+          </Link>
+          {loggedUser === null ? (
+            <button
+              className="button button-primary"
+              onClick={() => {
+                dispatch(logIn('tylermcginnis'))
+              }}
+            >
+              Log In
+            </button>
+          ) : (
+            <div className="header-right-container">
+              <span className="header-hello-username">
+                Hello {loggedUser.name}!
+              </span>
+              <Avatar
+                user={loggedUser}
+                size="small"
+                className="header-avatar"
+              />
               <button
                 className="button button-primary"
                 onClick={() => {
-                  dispatch(logIn('tylermcginnis'))
+                  dispatch(logOut())
                 }}
               >
-                Log In
+                Log Out
               </button>
-            ) : (
-              <div className="header-right-container">
-                <span className="header-hello-username">
-                  Hello {loggedUser.name}!
-                </span>
-                <Avatar
-                  user={loggedUser}
-                  size="small"
-                  className="header-avatar"
-                />
-                <button
-                  className="button button-primary"
-                  onClick={() => {
-                    dispatch(logOut())
-                  }}
-                >
-                  Log Out
-                </button>
-              </div>
+            </div>
+          )}
+        </header>
+        <nav className="App-nav">
+          <ul>
+            <li>
+              <NavLink
+                to="/"
+                exact
+                className="nav-link"
+                activeClassName="nav-link-active"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/add"
+                className="nav-link"
+                activeClassName="nav-link-active"
+              >
+                New Question
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/leaderboard"
+                className="nav-link"
+                activeClassName="nav-link-active"
+              >
+                Leader Board
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <main>
+          <Switch>
+            {loggedUser === null && (
+              <Route path="/login" component={LoginForm} />
             )}
-          </header>
-          <nav className="App-nav">
-            <ul>
-              <li>
-                <NavLink
-                  to="/"
-                  exact
-                  className="nav-link"
-                  activeClassName="nav-link-active"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/add"
-                  className="nav-link"
-                  activeClassName="nav-link-active"
-                >
-                  New Question
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/leaderboard"
-                  className="nav-link"
-                  activeClassName="nav-link-active"
-                >
-                  Leader Board
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <main>
-            <Switch>
-              {loggedUser === null && (
-                <Route path="/login" component={LoginForm} />
-              )}
-              {loggedUser === null && <Redirect to="/login" />}
-              <Route path="/add" component={NewQuestionForm} />
-              <Route path="/leaderboard" component={LeaderBoard} />
-              <Route path="/question/:questionId" component={QuestionDetail} />
-              <Route path="/" exact component={HomePage} />
-              <Redirect to="/" />
-            </Switch>
-          </main>
-        </div>
+            {loggedUser === null && <Redirect to="/login" />}
+            <Route path="/add" component={NewQuestionForm} />
+            <Route path="/leaderboard" component={LeaderBoard} />
+            <Route path="/question/:questionId" component={QuestionDetail} />
+            <Route path="/" exact component={HomePage} />
+            <Redirect to="/" />
+          </Switch>
+        </main>
       </div>
     </Router>
   )
