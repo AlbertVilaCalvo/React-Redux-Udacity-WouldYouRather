@@ -6,7 +6,7 @@ import QuestionDetailAnswered from './QuestionDetailAnswered'
 import QuestionDetailNotAnswered from './QuestionDetailNotAnswered'
 
 const QuestionDetail = () => {
-  const { questionId } = useParams()
+  const { questionId } = useParams() // "/question/:questionId"
 
   const loggedUser = useLoggedUser()
   const [question, author] = useQuestionAuthor(questionId)

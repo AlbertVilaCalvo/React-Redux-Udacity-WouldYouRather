@@ -6,6 +6,7 @@ const QuestionDetailAnswered = ({ question, author, loggedUser }) => {
   const votes1 = question.optionOne.votes.length
   const votes2 = question.optionTwo.votes.length
   const totalVotes = votes1 + votes2
+  const percent = (votes) => `${((votes / totalVotes) * 100).toFixed(0)}%`
 
   const loggedUserAnswer = loggedUser.answers[question.id]
   const votedClass = (option) =>
@@ -28,7 +29,7 @@ const QuestionDetailAnswered = ({ question, author, loggedUser }) => {
             )}
             <p className="question-option">{question.optionOne.text}</p>
             <p className="question-votes">
-              {votes1}/{totalVotes} votes
+              {votes1}/{totalVotes} votes ({percent(votes1)})
             </p>
           </div>
           <div className={`question-option-container ${votedClass(ANSWER_2)}`}>
@@ -37,7 +38,7 @@ const QuestionDetailAnswered = ({ question, author, loggedUser }) => {
             )}
             <p className="question-option">{question.optionTwo.text}</p>
             <p className="question-votes">
-              {votes2}/{totalVotes} votes
+              {votes2}/{totalVotes} votes ({percent(votes2)})
             </p>
           </div>
         </div>
