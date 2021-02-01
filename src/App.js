@@ -39,16 +39,7 @@ function App() {
           <Link className="header-link" to="/">
             Would You Rather?
           </Link>
-          {loggedUser === null ? (
-            <button
-              className="button button-primary"
-              onClick={() => {
-                dispatch(logIn('tylermcginnis'))
-              }}
-            >
-              Log In
-            </button>
-          ) : (
+          {loggedUser !== null && (
             <div className="header-right-container">
               <span className="header-hello-username">
                 Hello {loggedUser.name}!
