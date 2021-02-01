@@ -105,23 +105,13 @@ function App() {
           <main>
             <Switch>
               {loggedUser === null && (
-                <Route path="/login">
-                  <LoginForm />
-                </Route>
+                <Route path="/login" component={LoginForm} />
               )}
               {loggedUser === null && <Redirect to="/login" />}
-              <Route path="/add">
-                <NewQuestionForm />
-              </Route>
-              <Route path="/leaderboard">
-                <LeaderBoard />
-              </Route>
-              <Route path="/question/:questionId">
-                <QuestionDetail />
-              </Route>
-              <Route path="/" exact>
-                <HomePage />
-              </Route>
+              <Route path="/add" component={NewQuestionForm} />
+              <Route path="/leaderboard" component={LeaderBoard} />
+              <Route path="/question/:questionId" component={QuestionDetail} />
+              <Route path="/" exact component={HomePage} />
               <Redirect to="/" />
             </Switch>
           </main>
