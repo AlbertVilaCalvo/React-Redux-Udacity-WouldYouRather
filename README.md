@@ -5,3 +5,9 @@ The Redux Project of the [Udacity React Nanodegree](https://www.udacity.com/cour
 Starter files: https://github.com/udacity/reactnd-project-would-you-rather-starter
 
 Video of a complete implementation by Udacity, to see the required behavior: https://www.youtube.com/watch?v=xfmSkLAL__Q
+
+## Development
+
+To install dependencies run `yarn` or `npm install`.
+
+To develop run `yarn start` or `npm start`, and then visit http://localhost:3000 in your browser.
