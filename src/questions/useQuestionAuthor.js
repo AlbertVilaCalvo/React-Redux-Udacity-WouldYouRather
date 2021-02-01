@@ -12,6 +12,12 @@ export default function useQuestionAuthor(id) {
     return [null, null]
   }
   const question = questions[id]
+  if (!question) {
+    return [null, null]
+  }
   const author = users[question.author]
+  if (!author) {
+    return [null, null]
+  }
   return [question, author]
 }

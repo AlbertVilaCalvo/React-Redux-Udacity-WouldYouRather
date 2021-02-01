@@ -78,3 +78,9 @@
   color: var(--color-primary);
   margin-top: 5px;
 }
+
+/* 404 - QuestionDetail */
+
+.question-404-p {
+  margin-top: 20px;
+}

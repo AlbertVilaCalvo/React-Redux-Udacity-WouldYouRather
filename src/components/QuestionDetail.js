@@ -11,8 +11,19 @@ const QuestionDetail = () => {
   const loggedUser = useLoggedUser()
   const [question, author] = useQuestionAuthor(questionId)
 
-  if (loggedUser === null || question === null || author === null) {
+  if (loggedUser === null) {
     return <Loading />
+  }
+
+  if (question === null || author === null) {
+    return (
+      <div>
+        <h1>404</h1>
+        <p className="question-404-p">
+          Question with id {questionId} not found.
+        </p>
+      </div>
+    )
   }
 
   const isAnswered = Object.keys(loggedUser.answers).includes(questionId)
