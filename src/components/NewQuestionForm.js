@@ -20,6 +20,7 @@ const NewQuestionForm = () => {
   }
 
   if (loggedUser === null) {
+    // will be redirected to /login
     return null
   }
 

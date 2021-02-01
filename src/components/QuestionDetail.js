@@ -12,7 +12,8 @@ const QuestionDetail = () => {
   const [question, author] = useQuestionAuthor(questionId)
 
   if (loggedUser === null) {
-    return <Loading />
+    // will be redirected to /login
+    return null
   }
 
   if (question === null || author === null) {
