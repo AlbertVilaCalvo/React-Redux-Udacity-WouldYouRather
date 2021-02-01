@@ -1,5 +1,5 @@
 const Loading = () => {
-  return <p>Loading...</p>
+  return <p style={{ fontSize: '30px', marginTop: '30px' }}>Loading...</p>
 }
 
 export default Loading
