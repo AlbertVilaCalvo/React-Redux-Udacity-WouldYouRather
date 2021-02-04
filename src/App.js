@@ -7,6 +7,7 @@ import {
   Redirect,
   Route,
   Switch,
+  useHistory,
 } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import useLoggedUser from './loggeduser/useLoggedUser'
@@ -19,6 +20,8 @@ import HomePage from './components/HomePage'
 import QuestionDetail from './components/QuestionDetail'
 import NewQuestionForm from './components/NewQuestionForm'
 import LeaderBoard from './components/LeaderBoard'
+import PrivateRoute from './components/PrivateRoute'
+import PageNotFound404 from './components/PageNotFound404'
 
 function App() {
   const dispatch = useDispatch()
@@ -94,15 +97,15 @@ function App() {
         </nav>
         <main>
           <Switch>
-            {loggedUser === null && (
-              <Route path="/login" component={LoginForm} />
-            )}
-            {loggedUser === null && <Redirect to="/login" />}
-            <Route path="/add" component={NewQuestionForm} />
-            <Route path="/leaderboard" component={LeaderBoard} />
-            <Route path="/question/:questionId" component={QuestionDetail} />
-            <Route path="/" exact component={HomePage} />
-            <Redirect to="/" />
+            <Route path="/login" component={LoginForm} />
+            <PrivateRoute path="/" exact component={HomePage} />
+            <PrivateRoute path="/add" component={NewQuestionForm} />
+            <PrivateRoute path="/leaderboard" component={LeaderBoard} />
+            <PrivateRoute
+              path="/question/:questionId"
+              component={QuestionDetail}
+            />
+            <PrivateRoute path="*" component={PageNotFound404} />
           </Switch>
         </main>
       </div>
