@@ -79,8 +79,9 @@
   margin-top: 5px;
 }
 
-/* 404 - QuestionDetail */
+/* 404 - PageNotFound404 */
 
-.question-404-p {
+.p-404 {
   margin-top: 20px;
+  font-size: 20px;
 }

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
-import Loading from './Loading'
 import useQuestionAuthor from '../questions/useQuestionAuthor'
 import useLoggedUser from '../loggeduser/useLoggedUser'
 import QuestionDetailAnswered from './QuestionDetailAnswered'
 import QuestionDetailNotAnswered from './QuestionDetailNotAnswered'
+import PageNotFound404 from './PageNotFound404'
 
 const QuestionDetail = () => {
   const { questionId } = useParams() // "/question/:questionId"
@@ -18,12 +18,7 @@ const QuestionDetail = () => {
 
   if (question === null || author === null) {
     return (
-      <div>
-        <h1>404</h1>
-        <p className="question-404-p">
-          Question with id {questionId} not found.
-        </p>
-      </div>
+      <PageNotFound404 text={`Question with id '${questionId}' not found.`} />
     )
   }
 
