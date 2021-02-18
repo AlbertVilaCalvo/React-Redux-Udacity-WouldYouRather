@@ -4,10 +4,8 @@ import {
   BrowserRouter as Router,
   Link,
   NavLink,
-  Redirect,
   Route,
   Switch,
-  useHistory,
 } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import useLoggedUser from './loggeduser/useLoggedUser'
