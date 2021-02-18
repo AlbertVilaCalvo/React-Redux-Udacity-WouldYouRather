@@ -1,6 +1,6 @@
 # Udacity Redux Project - Would You Rather?
 
-<h2><a href="https://albert-udacity-react-redux-wouldyourather.netlify.app/login">See the app here!</a></h2>
+<h3><a href="https://albert-udacity-react-redux-wouldyourather.netlify.app/login">Try the app here!</a></h3>
 
 The Redux Project of the [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
 
