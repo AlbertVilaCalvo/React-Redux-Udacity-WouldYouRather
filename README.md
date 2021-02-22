@@ -1,8 +1,10 @@
-# Udacity Redux Project - Would You Rather?
+# Udacity React Redux Project - Would You Rather?
 
-<h3><a href="https://albert-udacity-react-redux-wouldyourather.netlify.app/">Try the app here! ⚡️</a></h3>
+<h3><a href="https://albert-react-redux-udacity-wouldyourather.netlify.app/">Try the app here! ⚡️</a></h3>
 
-The Redux Project of the [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
+The React Redux Project of the [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
+
+Uses Redux for state management, React Router and hooks.
 
 Starter files: https://github.com/udacity/reactnd-project-would-you-rather-starter
 
